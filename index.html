@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link href="assets/icons/fontawesome-free-5.13.0-web/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card my-5">
+                        <div class="card-header">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Manage Employees</h5>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button class="btn btn-danger" onclick="deleteRow.deleteSelectedEmployees()">
+                                            <i class="fas fa-minus-circle"></i>
+                                            Delete
+                                        </button>
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="addNewEmployee.addNewEmployee()">
+                                            <i class="fas fa-plus-circle"></i>
+                                            Add New Employee
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body" id="table">
+                            <table class="table" id="example">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span class="parent_check">
+                                                <input type="checkbox" class="form-control input_check" id="check_box" checked onclick="selectAllCheckBox.selectAllButton()">
+                                                <label for="check_box" class="label_check"></label>
+                                            </span>
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                        <th>
+                                            Address
+                                        </th>
+                                        <th>
+                                            Phone
+                                        </th>
+                                        <th>
+                                            Actions
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table_body">
+                                </tbody>
+                            </table>
+                            <div class="no-record text-center" id="record">
+                                <img src="assets/images/no-result.png">
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="modal fade col-md-12" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <button type="button" class="close" onclick="addNewEmployee.closeModal()" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div id="name-input">
+                                    <label class="label" for="name">Name <span class="colan">:</span></label>
+                                    <input id="name" class="form-control" type="text" required onkeyup="addNewEmployee.checkValidation('name')"/>    
+                                </div>
+                                <div id="email-input">
+                                    <label class="label" for="email">E-mail<span class="colan">:</span></label>
+                                    <input id="email" class="form-control" type="email" required  onkeyup="addNewEmployee.checkValidation('email')"/>
+                                </div>
+                                <div id="address-input">
+                                    <label class="label" for="address">Address<span class="colan">:</span></label>
+                                    <input id="address" class="form-control" type="text" required  onkeyup="addNewEmployee.checkValidation('address')"/>
+                                </div>
+                                <div id="phone-input">
+                                    <label class="label" for="phone">Phone<span class="colan">:</span></label>
+                                    <input id="phone" class="form-control" type="text" required  onkeyup="addNewEmployee.checkValidation('phone')"/>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer" id="footer">
+                          <button type="button" class="btn btn-secondary"  onclick="addNewEmployee.closeModal()" data-dismiss="modal">Close</button>
+                            <button id="edit-employee" type="button" class="btn btn-primary"
+                                onclick="editDetailsOfEmployee.updateEmployee(document.getElementById('name').value,document.getElementById('email').value,document.getElementById('address').value,
+                                document.getElementById('phone').value)">
+                                Save
+                            </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <dif id="xx"></div>
+        </section>
+        <script src="js/jquery-3.5.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

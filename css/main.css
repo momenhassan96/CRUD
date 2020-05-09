@@ -1,0 +1,104 @@
+.card-header{
+    background-color: #435d7d;
+    color:#fff;
+}
+.card-body{
+    background-color: #fff !important;
+    color:#566787;
+    padding: 0 20px!important;
+}
+
+.table{
+    padding: 10px 5px !important;
+}
+
+.table th:not(:first-child){
+    text-align: center;
+}
+
+.table thead th{
+    vertical-align: top;
+}
+
+.table td:not(:first-child){
+    text-align: center;
+}
+
+.parent_check{
+    position: relative;
+}
+
+.input_check{
+    width:23px;
+    visibility: hidden;
+}
+
+.label_check{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 22px;
+    height:22px;
+    background-color: #fff;
+    border: solid 1px #eee;
+    cursor: pointer;
+}
+
+.label_check::before{
+    position: absolute;
+    content: '';
+    left: 8px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: none;
+}
+.input_check[type="checkbox"]:checked + .label_check::before{
+    display: block;
+}
+.input_check[type="checkbox"]:checked + .label_check{
+    background-color: #03A9F4;
+    border-color: #03A9F4;
+}
+
+.input_check[type="checkbox"]:focus{
+    box-shadow:none !important;
+}
+
+.links{
+    cursor: pointer;
+    display: inline-block;
+    margin: 0px 5px; 
+}
+
+.edit-link{
+    color:#fbc02d !important;
+}
+
+.delete-link{
+   color:#D32F2F !important; 
+}
+
+.no-record{
+    display: none;
+}
+
+.label{
+    margin : 10px 0;
+}
+
+.colan{
+    display: inline-block;
+    color:red;
+    margin-left:3px;
+}
+
+.dt-bootstrap4 {
+    margin: 35px 0 20px 0;
+}
+
